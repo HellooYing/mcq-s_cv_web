@@ -2,323 +2,371 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-       
-        <link rel="stylesheet" href="/static/css/bootstrap.css">
-        <link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
-        <link rel="stylesheet" href="/static/css/custom-styles.css">
-        <link rel="stylesheet" href="/static/css/font-awesome.css">
-        <link rel="stylesheet" href="/static/css/component.css">
-        <link rel="stylesheet" href="/static/css/font-awesome-ie7.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <script src="/static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/static/css/custom-styles.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/component.css">
+    <link rel="stylesheet" href="/static/css/font-awesome-ie7.css">
+
+    <script src="/static/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-            <div class="container">
-                <div class="site-header">
-                    <div class="logo">
-                        <h1>毛草球<small>的</small>CV</h1>
+    <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+    <div class="container">
+        <div class="site-header">
+            <div class="logo">
+                <h1>毛草球
+                    <small>的</small>CV</h1>
+            </div>
+            <div class="menu">
+                <div class="navbar">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="fw-icon-th-list"></i>
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="javascript:void(0)" onclick="f1()">本站说明</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="f2()">下载分类器</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="f3()">上传数据集</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="f4()">在线处理</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="f5()">联系我们</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="menu">
-                        <div class="navbar">
-                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                                <i class="fw-icon-th-list"></i>
-                            </a>
-                            <div class="nav-collapse collapse">
-                                <ul class="nav">
-                                    <li class="active"><a href="#">图片检索</a></li>
-                                    <li><a href="#">上传数据集</a></li>
-                                    <li><a href="#">下载分类器</a></li>
-                                    <li><a href="#">api说明</a></li>
-                                    <li><a href="#">联系我们</a></li>
-                                </ul>
-                            </div><!--/.nav-collapse -->
+                    <!--/.nav-collapse -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="banner">
+            <div class="carousel slide" id="myCarousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/static/img/banner-image.jpg" alt="" class="bw">
+                        <div class="carousel-caption">
+                            <h1>检索相似图片</h1>
+                            <h2>Retrieve similar images</h2>
                         </div>
-                        <div class="mini-menu">
-            <label>
-          <select class="selectnav">
-            <option value="#" selected="">Home</option>
-            <option value="#">About</option>
-            <option value="#">→ Another action</option>
-            <option value="#">→ Something else here</option>
-            <option value="#">→ Another action</option>
-            <option value="#">→ Something else here</option>
-            <option value="#">Services</option>
-            <option value="#">Work</option>
-            <option value="#">Contact</option>
-          </select>
-          </label>
-          </div>
+                    </div>
+                    <div class="item">
+                        <img src="/static/img/banner-image2.jpg" alt="" class="bw">
+                        <div class="carousel-caption" style="background-color:rgb(57, 189, 189);">
+                            <h1>图像识别</h1>
+                            <h2>Extracting features / Image Identification</h2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/static/img/banner-image3.jpg" alt="" class="bw">
+                        <div class="carousel-caption" style="background-color:rgb(236, 213, 82);">
+                            <h1>训练分类器</h1>
+                            <h2>Training classifier</h2>
+                        </div>
+                    </div>
+                </div>
+                <a data-slide="prev" href="#myCarousel" class="carousel-control left">
+                    <i class="fw-icon-chevron-left"></i>
+                </a>
+                <a data-slide="next" href="#myCarousel" class="carousel-control right">
+                    <i class="fw-icon-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="featured-content">
+            <div class="row-fluid">
+                <div class="span5 offset1">
+                    <div class="block">
+                        <h1>Inception-v3迁移学习</h1>
+                        <h2>
+                            <small>使用google已经训练好的模型，
+                                <br>只修改最后的全连接层，
+                                <br>将原有的1000分类分类器修改为我们需要的分类器，
+                                <br>用原模型的特征提取能力实现其他数据模型的快速训练。</small>
+                        </h2>
+                        <a href="https://github.com/Hvass-Labs/TensorFlow-Tutorials" class="btn">More Info</a>
+                    </div>
+                </div>
+                <div class="span5">
+                    <div class="block-content">
+                        <h1>本站介绍</h1>
+                        <p>本站提供相似图片检索、图像识别、分类器下载、分类器构建教程
+                        </p>
+                        <p class="last">您可以选择构建KNN分类器，或者基于谷歌提供的Inception-v3进行迁移学习构建CNN分类器</p>
+
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="banner">
-                    <div class="carousel slide" id="myCarousel">
-                                    <!-- Carousel items -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="/static/img/banner-image.jpg" alt="" class="bw">
-                                <div class="carousel-caption">
-                                  <h1>检索相似图片</h1>
-                                  <h2>Retrieve similar images</h2>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="/static/img/banner-image2.jpg" alt="" class="bw">
-                                <div class="carousel-caption" style="background-color:rgb(57, 189, 189);">
-                                  <h1>图像识别</h1>
-                                  <h2>Extracting features / Image Identification</h2>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="/static/img/banner-image3.jpg" alt="" class="bw">
-                                <div class="carousel-caption" style="background-color:rgb(236, 213, 82);">
-                                  <h1>训练分类器</h1>
-                                  <h2>Training classifier</h2>
-                                </div>
-                            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="featured-blocks">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fw-icon-user icon"></i>
+                        </a>
+                        <div class="media-body">
+                            <h1 class="media-heading">准备好您的数据集
+                                <br>
+                                <br> </h1>
+                            <div class="ruler-bottom"></div>
+                            <p class="spacing-t">本站为您准备了百度图片爬虫程序，您可以运行此程序获取您想要进行分类的图片数据集</p>
+
+                            <a href="#" class="btn">下载点我</a>
                         </div>
-                        <a data-slide="prev" href="#myCarousel" class="carousel-control left"><i class="fw-icon-chevron-left"></i></a>
-                        <a data-slide="next" href="#myCarousel" class="carousel-control right"><i class="fw-icon-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fw-icon-time icon"></i>
+                        </a>
+                        <div class="media-body">
+                            <h1 class="media-heading">下载Inception-v3模型及训练程序</h1>
+                            <div class="ruler-bottom"></div>
+                            <p class="spacing-t">根据您的需求修改train.py中的几个变量，运行程序并耐心等待。个人电脑可能需要不超过30min来进行训练。</p>
+                            <a href="#" class="btn">下载点我</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fw-icon-tag icon"></i>
+                        </a>
+                        <div class="media-body">
+                            <h1 class="media-heading">运行验证程序，获取分类结果</h1>
+                            <div class="ruler-bottom"></div>
+                            <p class="spacing-t">test.py可接收图片地址，输出分类结果。run/数字/checkpoint保存了您的模型。
+                                <br>
+                                <br>
+                            </p>
+                            <a href="#" class="btn">下载点我</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="featured-content">
+        </div>
+    </div>
+    <div class="container">
+        <div class="featured-heading">
+            <h1>上传数据集</h1>
+            <form class="form-horizontal input-append"  action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="uploadfile" id="file" class="inputfile span3" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;position: absolute;z-index: -1;"
+                    data-multiple-caption="{count} files selected" multiple />
+                <label for="file" style="color:aliceblue;padding: 10px;height: 45px;width:200px;font-size: 25px;margin-bottom: 25px;background-color: rgba(250, 150, 150, 0.5)">选择文件</label>
+                <button type="submit" class="btn">上传</button>
+            </form>
+        </div>
+    </div>
+   
+
+    <div class="container">
+        <div class="tabs">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="">
+                    <a href="#Sedegestasteet" data-toggle="tab">
+                        <i class="fw-icon-flag"></i> 图片检索</a>
+                </li>
+                <li class="">
+                    <a href="#morbiinterdum" data-toggle="tab">
+                        <i class="fw-icon-tint"></i> 图像识别</a>
+                </li>
+                <li class="active">
+                    <a href="#interdumMorbi" data-toggle="tab">
+                        <i class="fw-icon-magnet"></i>图片分类 </a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="Sedegestasteet">
                     <div class="row-fluid">
-                        <div class="span5 offset1">
+                        <div class="span6 ruler-right ruler-bottom">
                             <div class="block">
-                                <h1>Inception-v3迁移学习</h1>
-                                <h2><small>使用google已经训练好的模型，<br>只修改最后的全连接层，<br>将原有的1000分类分类器修改为我们需要的分类器，<br>用原模型的特征提取能力实现其他数据模型的快速训练。</small> </h2>
-                                <a href="https://github.com/Hvass-Labs/TensorFlow-Tutorials" class="btn">More Info</a>
+                                <img src="/static/img/img1.png" class="spacing-b" alt="">
+                                <p class="last">图片检索</p>
                             </div>
                         </div>
-                        <div class="span5">
-                            <div class="block-content">
-                                <h1>本站介绍</h1>
-                                <p>本站提供相似图片检索、图像识别、分类器下载、分类器构建教程
-                                </p>
-                                <p class="last">您可以选择构建KNN分类器，或者基于谷歌提供的Inception-v3进行迁移学习构建CNN分类器</p>
-
+                        <div class="span6">
+                            <div class="block no-spacing-l">
+                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
+                                <p class="last">图片检索</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="featured-blocks">
+                <div class="tab-pane fade" id="morbiinterdum">
                     <div class="row-fluid">
-                        <div class="span4">
-                            <div class="media">
-                              <a class="pull-left" href="#">
-                                <i class="fw-icon-user icon"></i>
-                              </a>
-                              <div class="media-body">
-                                <h1 class="media-heading">准备好您的数据集 <br> <br> </h1>
-                                <div class="ruler-bottom"></div>
-                                <p class="spacing-t">本站为您准备了百度图片爬虫程序，您可以运行此程序获取您想要进行分类的图片数据集</p>
-                              
-                                <a href="#" class="btn">下载点我</a>
-                              </div>
+                        <div class="span6 ruler-right">
+                            <div class="block">
+                                <img src="/static/img/img1.png" class="spacing-b" alt="">
+                                <p class="last">图像识别</p>
                             </div>
                         </div>
-                        <div class="span4">
-                            <div class="media">
-                              <a class="pull-left" href="#">
-                                <i class="fw-icon-time icon"></i>
-                              </a>
-                              <div class="media-body">
-                                <h1 class="media-heading">下载Inception-v3模型及训练程序</h1>
-                                <div class="ruler-bottom"></div>
-                                <p class="spacing-t">根据您的需求修改train.py中的几个变量，运行程序并耐心等待。个人电脑可能需要不超过30min来进行训练。</p>
-                                <a href="#" class="btn">下载点我</a>
-                              </div>
+                        <div class="span6">
+                            <div class="block no-spacing-l">
+                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
+                                <p class="last">图像识别</p>
                             </div>
                         </div>
-                        <div class="span4">
-                            <div class="media">
-                              <a class="pull-left" href="#">
-                                <i class="fw-icon-tag icon"></i>
-                              </a>
-                              <div class="media-body">
-                                <h1 class="media-heading">运行验证程序，获取分类结果</h1>
-                                <div class="ruler-bottom"></div>
-                                <p class="spacing-t">test.py可接收图片地址，输出分类结果。run/数字/checkpoint保存了您的模型。 <br> <br></p>
-                                <a href="#" class="btn">下载点我</a>
-                              </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="interdumMorbi">
+                    <div class="row-fluid">
+                        <div class="span6 ruler-right">
+                            <div class="block">
+                                <img src="/static/img/img1.png" class="spacing-b" alt="">
+                                <p class="last">图片分类</p>
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <div class="block no-spacing-l">
+                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
+                                <p class="last">图片分类</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="featured-heading">
-                    <h1>上传数据集</h1>
-                    <h2>感谢分享</h2>
-                    <form class="form-horizontal input-append">
-                        <input class="span3" type="text" placeholder="图片、压缩包……">图片、压缩包……
-                        <button type="submit" class="btn">上传</button>
-                    </form>
-                </div>
-            </div><div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
-            
-            <div class="container">
-                <div class="tabs">
-                    <ul id="myTab" class="nav nav-tabs">
-                      <li class=""><a href="#Sedegestasteet" data-toggle="tab"><i class="fw-icon-flag"></i> Sed egest asteet</a></li>
-                      <li class=""><a href="#morbiinterdum" data-toggle="tab"><i class="fw-icon-tint"></i> morbi interdum</a></li>
-                      <li class="active"><a href="#interdumMorbi" data-toggle="tab"><i class="fw-icon-magnet"></i>interdum Morbi </a></li>
+        </div>
+    </div>
+   <div class="container">
+        <div class="site-info">
+            <div class="span3">
+                <h1>毛草球</h1>
+                <div class="posts">
+                    <ul>
+                       
+                        <li>
+                            <img src="/static/img/img4.jpg" style="width:100px;" class="pull-left" alt=""> 2018 . 8 . 7
+                            <br>
+                            <h6>
+                                <a href="#">毛草球</a>
+                            </h6>
+                            <p class="last">东北大学计算机学院大三学生</p>
+
+                        </li>
                     </ul>
-                    <div id="myTabContent" class="tab-content">
-                      <div class="tab-pane fade active in" id="Sedegestasteet">
-                        <div class="row-fluid">
-                            <div class="span6 ruler-right ruler-bottom">
-                                <div class="block">
-                                <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                            <div class="span6">
-                                <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="morbiinterdum">
-                        <div class="row-fluid">
-                            <div class="span6 ruler-right">
-                                <div class="block">
-                                <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                            <div class="span6">
-                                <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="interdumMorbi">
-                        <div class="row-fluid">
-                            <div class="span6 ruler-right">
-                                <div class="block">
-                                <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                            <div class="span6">
-                                <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis Gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis lorem ipsum dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                      </div>
-
-
-                    </div>
-
-                      
-                   
-                      
-                    
-
-
                 </div>
             </div>
-            <div class="container">
-                <div class="site-info">
-                    <div class="span3">
-                        <h1>Blog posts</h1>
-                        <div class="posts">
-                            <ul>
-                                <li><img src="/static/img/img3.png" class="pull-left" alt="">
-                                    Aug / 27 / 2013 <br>
-                                    <h6><a href="#">Cohn Doe</a></h6>
-                                    <p class="last">Praesent dapibus, neque id cursus faucibus, tortor ...</p>
-
-                                </li>
-                                <li><img src="/static/img/img4.png" class="pull-left" alt="">
-                                    Aug / 27 / 2013 <br>
-                                    <h6><a href="#">Cohn Doe</a></h6>
-                                    <p class="last">Praesent dapibus, neque id cursus faucibus, tortor ...</p>
-
-                                </li>
-                                <li class="no-border-bottom"><img src="/static/img/img5.png" class="pull-left" alt="">
-                                    Aug / 27 / 2013 <br>
-                                    <h6><a href="#">Cohn Doe</a></h6>
-                                    <p class="last">Praesent dapibus, neque id cursus faucibus, tortor ...</p>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="span3">
-                         <h1>Twitter posts</h1>
-                        <div class="posts">
-                            <ul>
-                                <li class="no-border-bottom"><a href="#"><i class="fw-icon-twitter"></i></a>
-                                    <strong>@rafimit</strong> <br>
-                                    <p class="last">Morbi interdum mollis sapien sed ac risus. Phasellus lacinia</p>
-
-                                </li>
-                                <li class="no-border-bottom no-spacing-t"><a href="#"><i class="fw-icon-twitter"></i></a>
-                                    <strong>@johndoe</strong> <br>
-                                    <p class="last">Morbi interdum mollis sapien sed ac risus. Phasellus lacinia</p>
-                                </li>
-                                <li class="no-border-bottom no-spacing-t"><a href="#"><i class="fw-icon-twitter"></i></a>
-                                    <strong>@amanda</strong> <br>
-                                    <p class="last">Morbi interdum mollis sapien sed ac risus. Phasellus lacinia</p>
-                                </li>
-                                <li class="no-border-bottom no-spacing-t"><a href="#"><i class="fw-icon-twitter"></i></a>
-                                    <strong>@peter</strong> <br>
-                                    <p class="last">Morbi interdum mollis sapien sed ac risus. Phasellus lacinia</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="span5">
-                        <h1>Quick contact</h1>
-                        <img src="/static/img/img6.png" class="spacing-t spacing-b" alt="">
-                        <div class="site-address">
-                            <strong>Address</strong><br>
-                            <span>Building name, some street name, some city name, country</span>
-                        </div>
-                          <a href="#" class="link"> info@sitename.com </a> /  (000)  888 888 8888
-
-                    </div>
+            <div class="span3" >
+                <h1>联系方式</h1>
+                <div class="posts">
+                    <ul>
+                        <li class="no-border-bottom no-spacing-t">
+                            <a href="#">
+                                <i class="fw-icon-ok"></i>
+                            </a>
+                            <strong>邮箱</strong>
+                            <br>
+                            <p class="last">maocaoqiu@gmail.com</p>
+                            <a href="#">
+                                <i class="fw-icon-qrcode"></i>
+                            </a>
+                            <strong>微信</strong>
+                            <br>
+                            <p class="last">m15642330153</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="container">
-                <div class="copy-rights">
-                    Copyright(c) website name.   Images from: <a href="">wallpaperswide.com</a>/ <a href="">photorack</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+            <div class="span3">
+                <h1>地址</h1>
+                <div class="posts">
+                    <ul>
+                       
+                        <li>
+                            <img src="/static/img/img5.jpg" style="width:100px;" class="pull-left" alt="">
+                            <br>
+                            <h6>
+                                东北大学浑南校区
+                            </h6>
+
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-       <script src="/static/js/jquery-1.9.1.js"></script> 
-<script src="/static/js/bootstrap.js"></script>
-<script>
-$('#myCarousel').carousel({
-    interval: 3800
-});
-</script>
+        </div>
+    </div> 
+    <div class="container">
+        <div class="copy-rights">
+            Copyright(c) MCQ's CV. 
+            <a href="https://github.com/HellooYing">more</a>
+        </div>
+    </div>
 
-    </body>
+    <script src="/static/js/jquery-1.9.1.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script>
+        $('#myCarousel').carousel({
+            interval: 3800
+        });
+        var inputs = document.querySelectorAll('.inputfile');
+        Array.prototype.forEach.call(inputs, function (input) {
+            var label = input.nextElementSibling,
+                labelVal = label.innerHTML;
+
+            input.addEventListener('change', function (e) {
+                var fileName = '';
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '')
+                        .replace('{count}', this.files.length);
+                else
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName)
+                    label.querySelector('span').innerHTML = fileName;
+                else
+                    label.innerHTML = labelVal;
+            });
+        });
+        function f1(){
+            document.body.scrollTop = document.documentElement.scrollTop = 800;
+            }
+        function f2(){
+            document.body.scrollTop = document.documentElement.scrollTop = 1200;
+            }
+        function f3(){
+            document.body.scrollTop = document.documentElement.scrollTop = 1400;
+            }
+        function f4(){
+            document.body.scrollTop = document.documentElement.scrollTop = 1800;
+            }
+        function f5(){
+            document.body.scrollTop = document.documentElement.scrollTop = 2200;
+            }
+    </script>
+
+</body>
+
 </html>

@@ -1,12 +1,12 @@
 from settings import settings,is_closing,signal_handler,try_exit
-from model import MainHandler,LoginHandler
+from model import MainHandler,UploadHandler
 import tornado.ioloop
 import signal
 from tornado.options import options
 
 application = tornado.web.Application([
     (r"/", MainHandler),
-    (r"/login", LoginHandler),
+    (r"/upload", UploadHandler),
 ], **settings)
 
 
