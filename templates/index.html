@@ -25,7 +25,10 @@
 
 <body>
     <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. 
+                Please <a href="http://browsehappy.com/">upgrade your browser</a> or
+                 <a href="http://www.google.com/chromeframe/?redirect=true">
+                    activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
     <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
@@ -61,7 +64,7 @@
                     </div>
                     <!--/.nav-collapse -->
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -121,7 +124,8 @@
                         <h1>本站介绍</h1>
                         <p>本站提供相似图片检索、图像识别、分类器下载、分类器构建教程
                         </p>
-                        <p class="last">您可以选择构建KNN分类器，或者基于谷歌提供的Inception-v3进行迁移学习构建CNN分类器</p>
+                        <p class="last">您可以选择构建KNN分类器， 或者基于谷歌提供的Inception-v3进行迁移学习构建CNN分类器
+                        </p>
 
                     </div>
                 </div>
@@ -141,7 +145,8 @@
                                 <br>
                                 <br> </h1>
                             <div class="ruler-bottom"></div>
-                            <p class="spacing-t">本站为您准备了百度图片爬虫程序，您可以运行此程序获取您想要进行分类的图片数据集</p>
+                            <p class="spacing-t">本站为您准备了百度图片爬虫程序， 您可以运行此程序获取您想要进行分类的图片数据集
+                            </p>
 
                             <a href="#" class="btn">下载点我</a>
                         </div>
@@ -155,7 +160,8 @@
                         <div class="media-body">
                             <h1 class="media-heading">下载Inception-v3模型及训练程序</h1>
                             <div class="ruler-bottom"></div>
-                            <p class="spacing-t">根据您的需求修改train.py中的几个变量，运行程序并耐心等待。个人电脑可能需要不超过30min来进行训练。</p>
+                            <p class="spacing-t">根据您的需求修改train.py中的几个变量，运行程序并耐心等待。 个人电脑可能需要不超过30min来进行训练。
+                            </p>
                             <a href="#" class="btn">下载点我</a>
                         </div>
                     </div>
@@ -168,7 +174,7 @@
                         <div class="media-body">
                             <h1 class="media-heading">运行验证程序，获取分类结果</h1>
                             <div class="ruler-bottom"></div>
-                            <p class="spacing-t">test.py可接收图片地址，输出分类结果。run/数字/checkpoint保存了您的模型。
+                            <p class="spacing-t">test.py可接收图片地址，输出分类结果。 run/数字/checkpoint保存了您的模型。
                                 <br>
                                 <br>
                             </p>
@@ -182,20 +188,22 @@
     <div class="container">
         <div class="featured-heading">
             <h1>上传数据集</h1>
-            <form class="form-horizontal input-append"  action="/upload" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal input-append" action="/upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="uploadfile" id="file" class="inputfile span3" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;position: absolute;z-index: -1;"
                     data-multiple-caption="{count} files selected" multiple />
-                <label for="file" style="color:aliceblue;padding: 10px;height: 45px;width:200px;font-size: 25px;margin-bottom: 25px;background-color: rgba(250, 150, 150, 0.5)">选择文件</label>
-                <button type="submit" class="btn">上传</button>
+                <label for="file" style="border-radius: 4px 4px 4px 4px;color:aliceblue;
+                padding: 10px;height: 45px;width:200px;font-size: 25px;margin-bottom: 25px;
+                background-color: rgba(250, 150, 150, 0.5)">选择文件</label>
+                <button type="submit" class="btn" style="border-radius: 4px 4px 4px 4px;">上传</button>
             </form>
         </div>
     </div>
-   
+
 
     <div class="container">
         <div class="tabs">
             <ul id="myTab" class="nav nav-tabs">
-                <li class="">
+                <li class="active">
                     <a href="#Sedegestasteet" data-toggle="tab">
                         <i class="fw-icon-flag"></i> 图片检索</a>
                 </li>
@@ -203,41 +211,68 @@
                     <a href="#morbiinterdum" data-toggle="tab">
                         <i class="fw-icon-tint"></i> 图像识别</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#interdumMorbi" data-toggle="tab">
                         <i class="fw-icon-magnet"></i>图片分类 </a>
                 </li>
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="Sedegestasteet">
+                    <form class="form-horizontal input-append" action="/search" method="post" style="width:60%;margin-left:3%">
+                        <input type="text" name="" id="" class="span3" style="height:30px;width: 200px;" />
+                        <button type="submit" class="btn" style="opacity: .8;">检索</button>
+                    </form>
                     <div class="row-fluid">
                         <div class="span6 ruler-right ruler-bottom">
                             <div class="block">
                                 <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">图片检索</p>
+                                <p class="last">检索结果1</p>
                             </div>
                         </div>
+
                         <div class="span6">
                             <div class="block no-spacing-l">
                                 <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">图片检索</p>
+                                <p class="last">检索结果2</p>
                             </div>
+                            <a href="javascript:void(0)">
+                                <p class="last" style="margin-left: 80%;margin-bottom: -20px;
+                                color:#000000;opacity: .3;">
+                                    换一批</p>
+                            </a>
                         </div>
+
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="morbiinterdum">
+                    <div class="form-horizontal input-append">
+                        <input id="txsb" type="file" accept="jpg png" name="uploadfile"  class="inputfile span4" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;
+                            position: absolute;z-index: -1;" />
+                        <label for="txsb" style="border-radius: 4px 0 0 4px;color:rgba(145, 143, 143, 0.548);
+                        padding-top: 5px;padding-left: 5px;height: 30px;width:200px;font-size: 15px;
+                        float:left;margin-left: 33px;vertical-align: middle;   margin-bottom: 1px;padding-bottom: 0; background-color: #ffffff;
+                        border: 1px solid #cccccc;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)">
+                            选择文件</label>
+                        <button type="submit" class="btn" style="border-radius: 0 4px  4px 0;float:left;opacity: .8;" onclick="UploadFile();">上传</button>
+                    </div>
                     <div class="row-fluid">
                         <div class="span6 ruler-right">
                             <div class="block">
-                                <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">图像识别</p>
+                                <img id="sbimg" src="/static/img/img1.png" class="spacing-b" alt="">
+                                <p class="last">原图</p>
                             </div>
                         </div>
                         <div class="span6">
                             <div class="block no-spacing-l">
                                 <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">图像识别</p>
+                                <p class="last">识别结果</p>
                             </div>
+                            <a href="javascript:void(0)">
+                                <p class="last" style="margin-left: 80%;margin-bottom: -20px;
+                                color:#000000;opacity: .3;">
+                                    换一下</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -254,19 +289,23 @@
                                 <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
                                 <p class="last">图片分类</p>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
-   <div class="container">
+    <div class="container">
         <div class="site-info">
             <div class="span3">
                 <h1>毛草球</h1>
                 <div class="posts">
                     <ul>
-                       
+
                         <li>
                             <img src="/static/img/img4.jpg" style="width:100px;" class="pull-left" alt=""> 2018 . 8 . 7
                             <br>
@@ -279,7 +318,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="span3" >
+            <div class="span3">
                 <h1>联系方式</h1>
                 <div class="posts">
                     <ul>
@@ -304,7 +343,7 @@
                 <h1>地址</h1>
                 <div class="posts">
                     <ul>
-                       
+
                         <li>
                             <img src="/static/img/img5.jpg" style="width:100px;" class="pull-left" alt="">
                             <br>
@@ -317,10 +356,10 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <div class="container">
         <div class="copy-rights">
-            Copyright(c) MCQ's CV. 
+            Copyright(c) MCQ's CV.
             <a href="https://github.com/HellooYing">more</a>
         </div>
     </div>
@@ -331,40 +370,58 @@
         $('#myCarousel').carousel({
             interval: 3800
         });
-        var inputs = document.querySelectorAll('.inputfile');
-        Array.prototype.forEach.call(inputs, function (input) {
-            var label = input.nextElementSibling,
-                labelVal = label.innerHTML;
-
-            input.addEventListener('change', function (e) {
-                var fileName = '';
-                if (this.files && this.files.length > 1)
-                    fileName = (this.getAttribute('data-multiple-caption') || '')
-                        .replace('{count}', this.files.length);
-                else
-                    fileName = e.target.value.split('\\').pop();
-
-                if (fileName)
-                    label.querySelector('span').innerHTML = fileName;
-                else
-                    label.innerHTML = labelVal;
-            });
-        });
-        function f1(){
+        function f1() {
             document.body.scrollTop = document.documentElement.scrollTop = 800;
-            }
-        function f2(){
+        }
+        function f2() {
             document.body.scrollTop = document.documentElement.scrollTop = 1200;
-            }
-        function f3(){
+        }
+        function f3() {
             document.body.scrollTop = document.documentElement.scrollTop = 1400;
-            }
-        function f4(){
+        }
+        function f4() {
             document.body.scrollTop = document.documentElement.scrollTop = 1800;
-            }
-        function f5(){
+        }
+        function f5() {
             document.body.scrollTop = document.documentElement.scrollTop = 2200;
-            }
+        }
+        function UploadFile(){
+            var fileObj = $("#txsb")[0].files[0];
+            console.log(fileObj)
+            var form = new FormData();
+            form.append("uploadfile", fileObj);
+ 
+            $.ajax({
+                type:'POST',
+                url: '/upload2',
+                data: form,
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,  // tell jQuery not to set contentType
+                success: function(result){
+                    alert("上传成功");
+                }
+            })
+        }
+document
+    .querySelector('#txsb')
+    .addEventListener('change', function(){
+        //当没选中图片时，清除预览
+        if(this.files.length === 0){
+            document.querySelector('#preview').src = '';
+            return;
+        }
+        
+        //实例化一个FileReader
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            //当reader加载时，把图片的内容赋值给
+            document.querySelector('#sbimg').src = e.target.result;
+        };
+
+    //读取选中的图片，并转换成dataURL格式
+    reader.readAsDataURL(this.files[0]);
+    }, false);
     </script>
 
 </body>

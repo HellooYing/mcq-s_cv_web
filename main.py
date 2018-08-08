@@ -1,5 +1,5 @@
 from settings import settings,is_closing,signal_handler,try_exit
-from model import MainHandler,UploadHandler
+from model import MainHandler,UploadHandler,Upload2Handler
 import tornado.ioloop
 import signal
 from tornado.options import options
@@ -7,6 +7,7 @@ from tornado.options import options
 application = tornado.web.Application([
     (r"/", MainHandler),
     (r"/upload", UploadHandler),
+    (r"/upload2", Upload2Handler),
 ], **settings)
 
 
