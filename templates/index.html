@@ -126,7 +126,6 @@
                         </p>
                         <p class="last">您可以选择构建KNN分类器， 或者基于谷歌提供的Inception-v3进行迁移学习构建CNN分类器
                         </p>
-
                     </div>
                 </div>
             </div>
@@ -147,7 +146,6 @@
                             <div class="ruler-bottom"></div>
                             <p class="spacing-t">本站为您准备了百度图片爬虫程序， 您可以运行此程序获取您想要进行分类的图片数据集
                             </p>
-
                             <a href="#" class="btn">下载点我</a>
                         </div>
                     </div>
@@ -199,84 +197,90 @@
         </div>
     </div>
 
-
     <div class="container">
         <div class="tabs">
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active">
                     <a href="#Sedegestasteet" data-toggle="tab">
-                        <i class="fw-icon-flag"></i> 图片检索</a>
+                        <i class="fw-icon-flag"></i> KNN检索</a>
                 </li>
                 <li class="">
                     <a href="#morbiinterdum" data-toggle="tab">
-                        <i class="fw-icon-tint"></i> 图像识别</a>
+                        <i class="fw-icon-tint"></i>图片分类</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#interdumMorbi" data-toggle="tab">
                         <i class="fw-icon-magnet"></i>图片分类 </a>
-                </li>
+                </li> -->
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div class="tab-pane fade active in" id="Sedegestasteet">
-                    <form class="form-horizontal input-append" action="/search" method="post" style="width:60%;margin-left:3%">
+                    <!-- <form class="form-horizontal input-append" action="/search" method="post" style="width:60%;margin-left:3%">
                         <input type="text" name="" id="" class="span3" style="height:30px;width: 200px;" />
                         <button type="submit" class="btn" style="opacity: .8;">检索</button>
-                    </form>
+                    </form> -->
+                    <div class="form-horizontal input-append">
+                            <input id="knn" type="file" accept="jpg png" name="uploadfile" class="inputfile span4" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;
+                                position: absolute;z-index: -1;" />
+                            <label for="knn" style="border-radius: 4px 0 0 4px;color:rgba(145, 143, 143, 0.548);
+                            padding-top: 5px;padding-left: 5px;height: 30px;width:200px;font-size: 15px;
+                            float:left;margin-left: 33px;vertical-align: middle;   margin-bottom: 1px;padding-bottom: 0; background-color: #ffffff;
+                            border: 1px solid #cccccc;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)">
+                                选择文件</label>
+                            <button type="submit" class="btn" style="border-radius: 0 4px  4px 0;float:left;opacity: .8;" onclick="UploadFilek();">检索</button>
+                        </div>
                     <div class="row-fluid">
                         <div class="span6 ruler-right ruler-bottom">
                             <div class="block">
                                 <img src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">检索结果1</p>
+                                <p class="last">根据KNN算法，在数据库中寻找与上传图片最相似的图片</p>
                             </div>
                         </div>
-
                         <div class="span6">
                             <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">检索结果2</p>
+                                <img src="/static/img/img2.png" id="knn-img" class="spacing-b no-spacing-l" alt="">
+                                <p class="last">查找结果</p>
                             </div>
                             <a href="javascript:void(0)">
-                                <p class="last" style="margin-left: 80%;margin-bottom: -20px;
+                                <p class="last" style="margin-left: 80%;margin-bottom: -12px;
                                 color:#000000;opacity: .3;">
-                                    换一批</p>
+                                    下一个</p>
                             </a>
                         </div>
-
                     </div>
                 </div>
-
                 <div class="tab-pane fade" id="morbiinterdum">
                     <div class="form-horizontal input-append">
-                        <input id="txsb" type="file" accept="jpg png" name="uploadfile"  class="inputfile span4" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;
+                        <input id="cnn" type="file" accept="jpg png" name="uploadfile" class="inputfile span4" style=" width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;
                             position: absolute;z-index: -1;" />
-                        <label for="txsb" style="border-radius: 4px 0 0 4px;color:rgba(145, 143, 143, 0.548);
+                        <label for="cnn" style="border-radius: 4px 0 0 4px;color:rgba(145, 143, 143, 0.548);
                         padding-top: 5px;padding-left: 5px;height: 30px;width:200px;font-size: 15px;
                         float:left;margin-left: 33px;vertical-align: middle;   margin-bottom: 1px;padding-bottom: 0; background-color: #ffffff;
                         border: 1px solid #cccccc;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)">
                             选择文件</label>
-                        <button type="submit" class="btn" style="border-radius: 0 4px  4px 0;float:left;opacity: .8;" onclick="UploadFile();">上传</button>
+                        <button type="submit" class="btn" style="border-radius: 0 4px  4px 0;float:left;opacity: .8;" onclick="UploadFilec();">分类</button>
                     </div>
                     <div class="row-fluid">
                         <div class="span6 ruler-right">
                             <div class="block">
                                 <img id="sbimg" src="/static/img/img1.png" class="spacing-b" alt="">
-                                <p class="last">原图</p>
+                                <p class="last">这里是两客一危车辆分类器，分类结果为大货车、油罐车、客车、小货车、小型车辆。</p>
                             </div>
                         </div>
                         <div class="span6">
                             <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
-                                <p class="last">识别结果</p>
+                                <img src="/static/img/img2.png" id="cnn-img" class="spacing-b no-spacing-l" alt="">
+                                <p class="last" id="cnn-result">分类结果</p>
                             </div>
-                            <a href="javascript:void(0)">
+                            <!-- <a href="javascript:void(0)">
                                 <p class="last" style="margin-left: 80%;margin-bottom: -20px;
                                 color:#000000;opacity: .3;">
                                     换一下</p>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="interdumMorbi">
+                <!-- <div class="tab-pane fade" id="interdumMorbi">
                     <div class="row-fluid">
                         <div class="span6 ruler-right">
                             <div class="block">
@@ -289,14 +293,10 @@
                                 <img src="/static/img/img2.png" class="spacing-b no-spacing-l" alt="">
                                 <p class="last">图片分类</p>
                             </div>
-
                         </div>
-
                     </div>
-                </div>
-
+                </div> -->
             </div>
-
         </div>
     </div>
     <div class="container">
@@ -305,7 +305,6 @@
                 <h1>毛草球</h1>
                 <div class="posts">
                     <ul>
-
                         <li>
                             <img src="/static/img/img4.jpg" style="width:100px;" class="pull-left" alt=""> 2018 . 8 . 7
                             <br>
@@ -313,7 +312,6 @@
                                 <a href="#">毛草球</a>
                             </h6>
                             <p class="last">东北大学计算机学院大三学生</p>
-
                         </li>
                     </ul>
                 </div>
@@ -343,14 +341,12 @@
                 <h1>地址</h1>
                 <div class="posts">
                     <ul>
-
                         <li>
                             <img src="/static/img/img5.jpg" style="width:100px;" class="pull-left" alt="">
                             <br>
                             <h6>
                                 东北大学浑南校区
                             </h6>
-
                         </li>
                     </ul>
                 </div>
@@ -385,43 +381,82 @@
         function f5() {
             document.body.scrollTop = document.documentElement.scrollTop = 2200;
         }
-        function UploadFile(){
-            var fileObj = $("#txsb")[0].files[0];
+        function UploadFilec() {
+            var fileObj = $("#cnn")[0].files[0];
             console.log(fileObj)
             var form = new FormData();
             form.append("uploadfile", fileObj);
- 
+
             $.ajax({
-                type:'POST',
-                url: '/upload2',
+                type: 'POST',
+                url: '/uploadc',
                 data: form,
-                processData: false,  // tell jQuery not to process the data
-                contentType: false,  // tell jQuery not to set contentType
-                success: function(result){
-                    alert("上传成功");
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    document.getElementById("cnn-img").src=$.parseJSON(result).imgs
+                    var textnode = "识别结果："+$.parseJSON(result).car
+                    document.getElementById("cnn-result").innerHTML=textnode
                 }
             })
         }
-document
-    .querySelector('#txsb')
-    .addEventListener('change', function(){
-        //当没选中图片时，清除预览
-        if(this.files.length === 0){
-            document.querySelector('#preview').src = '';
-            return;
+        function UploadFilek() {
+            var fileObj = $("#knn")[0].files[0];
+            console.log(fileObj)
+            var form = new FormData();
+            form.append("uploadfile", fileObj);
+
+            $.ajax({
+                type: 'POST',
+                url: '/uploadk',
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    alert($.parseJSON(result).imgs);
+                }
+            })
         }
-        
-        //实例化一个FileReader
-        var reader = new FileReader();
+        document
+            .querySelector('#cnn')
+            .addEventListener('change', function () {
+                //当没选中图片时，清除预览
+                if (this.files.length === 0) {
+                    document.querySelector('#preview').src = '';
+                    return;
+                }
 
-        reader.onload = function (e) {
-            //当reader加载时，把图片的内容赋值给
-            document.querySelector('#sbimg').src = e.target.result;
-        };
+                //实例化一个FileReader
+                var reader = new FileReader();
 
-    //读取选中的图片，并转换成dataURL格式
-    reader.readAsDataURL(this.files[0]);
-    }, false);
+                reader.onload = function (e) {
+                    //当reader加载时，把图片的内容赋值给
+                    document.querySelector('#sbimg').src = e.target.result;
+                };
+
+                //读取选中的图片，并转换成dataURL格式
+                reader.readAsDataURL(this.files[0]);
+            }, false);
+        document
+            .querySelector('#knn')
+            .addEventListener('change', function () {
+                //当没选中图片时，清除预览
+                if (this.files.length === 0) {
+                    document.querySelector('#preview').src = '';
+                    return;
+                }
+
+                //实例化一个FileReader
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    //当reader加载时，把图片的内容赋值给
+                    document.querySelector('#sbimg').src = e.target.result;
+                };
+
+                //读取选中的图片，并转换成dataURL格式
+                reader.readAsDataURL(this.files[0]);
+            }, false);
     </script>
 
 </body>
