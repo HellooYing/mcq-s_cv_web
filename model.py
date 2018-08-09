@@ -1,8 +1,19 @@
 import tornado.ioloop
 import tornado.web
 import json
-import classifier
-from classifier import car_type
+import cnn
+from cnn import car_type
+from function import addimg
+import pymysql
+import torndb
+from knn import pHash
+import Levenshtein
+db = torndb.Connection(
+        host='127.0.0.1',
+        database='mcqcv',
+        user='root',
+        password='12qwaszx'
+    )
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -11,11 +22,12 @@ class MainHandler(tornado.web.RequestHandler):
 
 class UploadHandler(tornado.web.RequestHandler):
     def post(self):
-        if self.request.files.get('uploadfile', None):
-            uploadFile = self.request.files['uploadfile'][0]
-            filename = uploadFile['filename']
-            fileObj = open("static/uoload/"+filename, 'wb')
-            fileObj.write(uploadFile['body'])
+        file_metas = self.request.files["uploadfile"]
+        for meta in file_metas:
+            file_name = meta['filename']
+            with open("static/upload/"+file_name,'wb') as up:
+                up.write(meta['body'])
+            addimg(db,"static/upload/"+file_name,pHash("static/upload/"+file_name))
         self.redirect('/')
 
 class UploadCHandler(tornado.web.RequestHandler):
@@ -23,9 +35,9 @@ class UploadCHandler(tornado.web.RequestHandler):
         file_metas = self.request.files["uploadfile"]
         for meta in file_metas:
             file_name = meta['filename']
-            with open("static/uoload/"+file_name,'wb') as up:
+            with open("static/upload/"+file_name,'wb') as up:
                 up.write(meta['body'])
-        a=car_type("static/uoload/"+file_name)
+        a=car_type("static/upload/"+file_name)
         if int(a)==0:
             imgs="/static/car-type-classifier/data/car_photos/ygc/ygc1.jpg"
             car="油罐车"
@@ -51,7 +63,30 @@ class UploadKHandler(tornado.web.RequestHandler):
         file_metas = self.request.files["uploadfile"]
         for meta in file_metas:
             file_name = meta['filename']
-            with open("static/uoload/"+file_name,'wb') as up:
+            with open("static/upload/"+file_name,'wb') as up:
                 up.write(meta['body'])
-        response_data = {'imgs': file_name}
+        sql = 'SELECT * FROM img'
+        all_img=db.query(sql)
+        l=[]
+        for i in all_img:
+            b=pHash("static/upload/"+file_name)
+            ll=[]
+            ll.append(Levenshtein.distance(b,i.feature))
+            ll.append(i.picture_address)
+            if len(l)==0:
+                l.append(ll)
+            else:
+                if ll[0]>l[-1][0]:
+                    l.append(ll)
+                else:
+                    j=0
+                    while(j<len(l)):
+                        print(j)
+                        if l[j][0]>=ll[0]:
+                            l.insert(j,ll)
+                            break
+                        else:
+                            j=j+1
+                            
+        response_data = {'imgs': l}
         self.write(json.dumps(response_data))

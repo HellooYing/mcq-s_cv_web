@@ -202,7 +202,7 @@
             <ul id="myTab" class="nav nav-tabs">
                 <li class="active">
                     <a href="#Sedegestasteet" data-toggle="tab">
-                        <i class="fw-icon-flag"></i> KNN检索</a>
+                        <i class="fw-icon-flag"></i> 图像检索</a>
                 </li>
                 <li class="">
                     <a href="#morbiinterdum" data-toggle="tab">
@@ -232,20 +232,20 @@
                     <div class="row-fluid">
                         <div class="span6 ruler-right ruler-bottom">
                             <div class="block">
-                                <img src="/static/img/img1.png" class="spacing-b" alt="">
+                                <img id="knnimg" src="/static/img/img1.png" class="spacing-b" alt="">
                                 <p class="last">根据KNN算法，在数据库中寻找与上传图片最相似的图片</p>
                             </div>
                         </div>
                         <div class="span6">
                             <div class="block no-spacing-l">
-                                <img src="/static/img/img2.png" id="knn-img" class="spacing-b no-spacing-l" alt="">
+                                <img src="/static/img/img22.png" id="knn-img" class="spacing-b no-spacing-l" alt="">
                                 <p class="last">查找结果</p>
                             </div>
-                            <a href="javascript:void(0)">
+                            <!-- <a href="javascript:void(0)">
                                 <p class="last" style="margin-left: 80%;margin-bottom: -12px;
                                 color:#000000;opacity: .3;">
                                     下一个</p>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -263,7 +263,7 @@
                     <div class="row-fluid">
                         <div class="span6 ruler-right">
                             <div class="block">
-                                <img id="sbimg" src="/static/img/img1.png" class="spacing-b" alt="">
+                                <img id="cnnimg" src="/static/img/img11.png" class="spacing-b" alt="">
                                 <p class="last">这里是两客一危车辆分类器，分类结果为大货车、油罐车、客车、小货车、小型车辆。</p>
                             </div>
                         </div>
@@ -413,7 +413,9 @@
                 processData: false,
                 contentType: false,
                 success: function (result) {
-                    alert($.parseJSON(result).imgs);
+                    document.getElementById("knn-img").src=$.parseJSON(result).imgs[0][1]
+                    // var textnode = "识别结果"
+                    // document.getElementById("cnn-result").innerHTML=textnode
                 }
             })
         }
@@ -431,7 +433,7 @@
 
                 reader.onload = function (e) {
                     //当reader加载时，把图片的内容赋值给
-                    document.querySelector('#sbimg').src = e.target.result;
+                    document.querySelector('#cnnimg').src = e.target.result;
                 };
 
                 //读取选中的图片，并转换成dataURL格式
@@ -451,7 +453,7 @@
 
                 reader.onload = function (e) {
                     //当reader加载时，把图片的内容赋值给
-                    document.querySelector('#sbimg').src = e.target.result;
+                    document.querySelector('#knnimg').src = e.target.result;
                 };
 
                 //读取选中的图片，并转换成dataURL格式
